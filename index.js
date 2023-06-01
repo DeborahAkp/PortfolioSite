@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3030;
 
 app.use(express.static('public/images'));
 app.use(express.static('public/files'));
@@ -29,8 +29,8 @@ app.get('/contact', (req, res) => {
     res.render('contactMe')
 })
 
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-})
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+});
 
 app.use(express.static('public'));
